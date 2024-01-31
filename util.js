@@ -35,6 +35,8 @@ async function init() {
         console.log("network:", network);
         console.log("signer: ", signer);
         console.log("contract: ", contract);
+        
+        console.log("passou 0");
 
         const networkAccount = document.getElementById("navAddress");
         networkAccount.innerHTML = "Bem-vindo(a) " + signer.address + "! ";
