@@ -39,9 +39,13 @@ async function init() {
         const networkAccount = document.getElementById("navAddress");
         networkAccount.innerHTML = "Bem-vindo(a) " + signer.address + "! ";
         
+        console.log("passou 1");
+
         try {
             const autorizado = await contract.hasRole("0x9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a6", signer.address);
+            console.log("passou 2");
             if (autorizado) {
+                console.log("passou 3");
                 const inputMetadados = document.getElementById("inputMetadados");
                 const inputAddress = document.getElementById("inputAddress");
                 const btnSubmit = document.getElementById("btnSubmit");
@@ -53,14 +57,17 @@ async function init() {
                 txtWarning.innerHTML = "";
             }
         } catch (error) {
+            console.log("entrou no catch 1");
             console.error(error);
         }
         // Create a contract
         try {
+            console.log("passou 4");
             const nftNomeObj = await contract.name();
             const nftNome = document.getElementById("nftNome");
             nftNome.innerHTML = nftNomeObj;
             const metadadosURL = await contract.tokenURI(0);
+            console.log("passou 5");
 
             console.log("metadadosURL: ", metadadosURL);
             const metadadadosResp = await fetch(metadadosURL);
@@ -74,6 +81,7 @@ async function init() {
             const divImg = document.getElementById("divImg");
             divImg.style.display = "grid";
         } catch (error) {
+            console.log("entrou no catch 2");
             console.error(error);
         }
     }
