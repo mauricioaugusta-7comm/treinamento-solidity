@@ -35,7 +35,7 @@ async function init() {
         console.log("network:", network);
         console.log("signer: ", signer);
         console.log("contract: ", contract);
-        
+
         console.log("passou 0");
 
         const networkAccount = document.getElementById("navAddress");
@@ -66,8 +66,11 @@ async function init() {
         try {
             console.log("passou 4");
             const nftNomeObj = await contract.name();
+            console.log("nftNomeObj: ", nftNomeObj);
             const nftNome = document.getElementById("nftNome");
+            console.log("nftNome: ", nftNome);
             nftNome.innerHTML = nftNomeObj;
+            console.log("passou 4.5");
             const metadadosURL = await contract.tokenURI(0);
             console.log("passou 5");
 
