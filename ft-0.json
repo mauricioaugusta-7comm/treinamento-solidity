@@ -1,0 +1,6 @@
+{
+    "name": "Token Fungível",
+    "description": "Descrição do Token Fungível",
+    "decimals": 2,
+    "image": "https://gabrielsdev.github.io/meunft/bitcoin.png"
+}
